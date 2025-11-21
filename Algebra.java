@@ -89,7 +89,7 @@ public class Algebra {
 		}
 	return x12;
 	}
-	
+
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
 		int xn = 1;
@@ -102,13 +102,42 @@ public class Algebra {
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
 		int count  = 0;
-		while (x1 >= x2) {
-			count++;
-			x1 = minus(x1, x2);
+		if (x1 > 0 && x2 > 0){
+			while (x1 >= x2) {
+				count++;
+				x1 = minus(x1, x2);
+			}
 		}
-		// Replace the following statement with your code
+
+		else {
+			if (x1 < 0 && x2 <0){
+				x1 = minus(0, x1);
+				x2 = minus(0, x2);
+				while (x1 >= x2) {
+					count++;
+					x1 = minus(x1, x2);
+				}
+			}
+			else if (x2 < 0){
+				x2 = minus(0, x2);
+				while (x1 >= x2) {
+					count++;
+					x1 = minus(x1, x2);
+				}
+				count = minus(0, count);
+			}
+			else{
+				x1 = minus(0, x1);
+				while (x1 >= x2) {
+					count++;
+					x1 = minus(x1, x2);
+				}
+				count = minus(0, count);
+			}
+		}
 		return count;
 	}
+
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
