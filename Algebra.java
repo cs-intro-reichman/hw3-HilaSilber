@@ -33,8 +33,8 @@ public class Algebra {
 		else {
 			for (int i = 0; i > x2; i--){
 				x1 --;
+			}
 		}
-	}
 	return x1;
 	}
 
@@ -58,9 +58,15 @@ public class Algebra {
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
 		int x12 = 0;
-		for (int i = 0; i < x2; i++){
-			for (int j = 0; j < x1; j++){
-				x12++;
+		if (x2 < 0){
+			for (int i = 0; i < -x2; i++){
+				x12 = plus(x12, x1);
+				x12 = minus(0, x12);
+			}
+		}
+		else{
+			for (int i = 0; i < x2; i++){
+				x12 = plus(x12, x1);
 			}
 		}
 		return x12;
