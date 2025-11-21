@@ -59,24 +59,37 @@ public class Algebra {
 	public static int times(int x1, int x2) {
 		int x12 = 0;
 		if (x2 < 0){
-			for (int i = 0; i < -x2; i++){
-				x12 = plus(x12, x1);
-			}
 			if (x1 > 0){
+				for (int i = 0; i < -x2; i++){
+					x12 = plus(x12, x1);
+				}
+				x12 = minus(0, x12);
+			}
+			else {
+				x1 = minus(0, x1);
+				for (int i = 0; i < -x2; i++){
+					x12 = plus(x12, x1);
+				}
 				x12 = minus(0, x12);
 			}
 		}
 		else{
-			for (int i = 0; i < x2; i++){
-				x12 = plus(x12, x1);
+			if (x1 > 0){
+				for (int i = 0; i < x2; i++){
+					x12 = plus(x12, x1);
 			}
-			if (x1 < 0){
-				x12 = minus(0, x12);
+			}
+			else{
+				x1 = minus(0, x1);
+				for (int i = 0; i < x2; i++){
+					x12 = plus(x12, x1);
+				}
+			x12 = minus(0, x12);
 			}
 		}
 	return x12;
 	}
-
+	
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
 		int xn = 1;
