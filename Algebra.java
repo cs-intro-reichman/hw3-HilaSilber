@@ -61,6 +61,8 @@ public class Algebra {
 		if (x2 < 0){
 			for (int i = 0; i < -x2; i++){
 				x12 = plus(x12, x1);
+			}
+			if (x1 > 0){
 				x12 = minus(0, x12);
 			}
 		}
@@ -68,8 +70,11 @@ public class Algebra {
 			for (int i = 0; i < x2; i++){
 				x12 = plus(x12, x1);
 			}
+			if (x1 < 0){
+				x12 = minus(0, x12);
+			}
 		}
-		return x12;
+	return x12;
 	}
 
 	// Returns x^n (for n >= 0)
