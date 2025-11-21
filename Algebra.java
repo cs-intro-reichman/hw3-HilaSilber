@@ -70,7 +70,7 @@ public class Algebra {
 				for (int i = 0; i < -x2; i++){
 					x12 = plus(x12, x1);
 				}
-				x12 = minus(0, x12);
+				//x12 = minus(0, x12);
 			}
 		}
 		else{

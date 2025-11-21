@@ -31,7 +31,7 @@ public class Anagram {
 		String new1 = preProcess(str1);
 		String new2 = preProcess(str2);
 		boolean flag = true;
-		if (str1.length() != str2.length()){
+		if (new1.length() != new2.length()){
 			flag = false;
 			return flag;
 		}
